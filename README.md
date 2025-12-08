@@ -168,7 +168,6 @@ To reproduce the full workflow from raw data to final figures:
 ## ✔️ Notes
 
 - All scripts use relative project paths, so they work on any machine.
-- The project does not include raw data files; they are downloaded automatically.
 - If a FRED API key becomes invalid, update it in src/get_data.py.
 
 ---
