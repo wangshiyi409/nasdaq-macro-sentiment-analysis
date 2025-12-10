@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from wordcloud import WordCloud
 from matplotlib.colors import LinearSegmentedColormap
+import textwrap
 
 
 # ================================================================
@@ -57,22 +58,48 @@ def load_data():
 # ================================================================
 # 1️⃣ Correlation Heatmap（keep coolwarm）
 # ================================================================
+
+
 def plot_heatmap(df_corr):
+
+    #  Prepare correlation dataset
     if "Indicator" not in df_corr.columns:
         df_corr = df_corr.rename(columns={"Unnamed: 0": "Indicator"})
 
     df = df_corr.set_index("Indicator").T
 
-    plt.figure(figsize=(14, 3))
-    sns.heatmap(
-        df, annot=True, cmap="coolwarm",
-        fmt='.3f', center=0, linewidths=0.5, linecolor="white"
-    )
-    plt.title("Economic Indicators Correlation Heatmap", fontsize=16)
-    plt.xticks(rotation=45, ha="right")
+    # Wrap long indicator names to avoid truncation in x-axis
+    wrapped_labels = [textwrap.fill(label, width=12) for label in df.columns]
 
+
+    # Plot with full labels
+    plt.figure(figsize=(16, 4))
+    sns.heatmap(
+        df,
+        annot=True,
+        cmap="coolwarm",
+        fmt=".3f",
+        center=0,
+        linewidths=0.5,
+        linecolor="white"
+    )
+
+    plt.title("Economic Indicators Correlation Heatmap", fontsize=16)
+
+    # Apply wrapped labels
+    plt.xticks(ticks=np.arange(len(wrapped_labels)) + 0.5,
+               labels=wrapped_labels,
+               rotation=0,
+               ha="center")
+
+    plt.yticks(rotation=0)
+
+    plt.tight_layout()  # prevent cropping
+
+
+    # Save figure
     path = os.path.join(RESULTS_DIR, "correlation_heatmap.png")
-    plt.savefig(path)
+    plt.savefig(path, dpi=300)
     plt.close()
     print(f"✅ Saved: {path}")
 

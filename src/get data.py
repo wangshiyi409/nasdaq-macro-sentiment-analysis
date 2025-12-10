@@ -10,9 +10,8 @@ warnings.filterwarnings('ignore')
 
 
 # ================================================================
-# Ensure consistent project root directory
+#Consistent project root directory
 # ================================================================
-# This makes sure all files are saved inside your project folder
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))  # src/ directory
 PROJECT_ROOT = os.path.dirname(PROJECT_ROOT)  # go up to project root
 
@@ -168,7 +167,7 @@ def scrape_yahoo_news_multiquery(queries):
 # MAIN EXECUTION
 # ================================================================
 if __name__ == "__main__":
-    API_KEY = "dca474e4ebb8d4b9092e387e067c07cc"  # ← 替换成你的 KEY
+    API_KEY = "dca474e4ebb8d4b9092e387e067c07cc"  #my API key
 
     # 1. Fetch FRED data
     fetch_fred_data(API_KEY)
@@ -179,7 +178,7 @@ if __name__ == "__main__":
     # 3. Fetch NASDAQ Index
     fetch_nasdaq()
 
-    # 4. Scrape Yahoo News
+    # 4. Scrape Yahoo News (all nasdaq related)
     queries = ["nasdaq", "nasdaq futures", "nasdaq index", "stock market", "tech stocks"]
     scrape_yahoo_news_multiquery(queries)
 
