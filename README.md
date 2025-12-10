@@ -2,6 +2,7 @@
 DSCI 510 – Final Project  
 Author: Shiyi Wang (shiyiw@usc.edu)  
 USC ID: 9862305589
+Github User Name； wangshiyi409
 
 ---
 
