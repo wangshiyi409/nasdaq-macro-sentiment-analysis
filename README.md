@@ -74,6 +74,8 @@ The requirements include:
 - yfinance
 - vaderSentiment
 - wordcloud
+- openpyxl
+- textwrap
 
 ---
 

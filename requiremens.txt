@@ -1,0 +1,12 @@
+pandas
+numpy
+matplotlib
+seaborn
+requests
+beautifulsoup4
+yfinance
+scikit-learn
+vaderSentiment
+wordcloud
+openpyxl
+textwrap
