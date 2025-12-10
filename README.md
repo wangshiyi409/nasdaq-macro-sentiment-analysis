@@ -1,4 +1,4 @@
-# Macro Indicators & Web-Scraped Market Senttment Analysis for NASDAQ Trends
+# Macro Indicators & Web-Scraped Market Sentiment Analysis for NASDAQ Trends
 DSCI 510 – Final Project  
 Author: Shiyi Wang (shiyiw@usc.edu)  
 USC ID: 9862305589
